@@ -4,26 +4,16 @@ namespace McrDigital.Bootcamp1.Cards
 
     public class Cards
     {
-        static void Main(string[] args)
-        {
-            var encapsulation = new Cards();
-            var deckInOrder = encapsulation.GetCards();
-            foreach (var card in deckInOrder)
-            {
-                Console.WriteLine(card);
-            }
-        }
-
         public string[] GetCards()
         {
             var result = new String[52];
-            var deck = new int[52][];
+            var deck = new PlayingCard[52];
 
             for (var suit = 0; suit < 4; suit++)
             {
                 for (var faceValue = 0; faceValue < 13; faceValue++)
                 {
-                    deck[suit * 13 + faceValue] = new int[] {suit, faceValue};
+                    deck[suit * 13 + faceValue] = new PlayingCard(suit, faceValue);
                 }
             }
 
@@ -31,7 +21,7 @@ namespace McrDigital.Bootcamp1.Cards
             foreach (var card in deck)
             {
                 var faceValueName = string.Empty;
-                switch (card[1])
+                switch (card.FaceValue)
                 {
                     case 0:
                         faceValueName = "ace";
@@ -45,7 +35,7 @@ namespace McrDigital.Bootcamp1.Cards
                     case 7:
                     case 8:
                     case 9:
-                        faceValueName = (card[1] + 1).ToString();
+                        faceValueName = (card.FaceValue + 1).ToString();
                         break;
                     case 10:
                         faceValueName = "jack";
@@ -56,11 +46,11 @@ namespace McrDigital.Bootcamp1.Cards
                     case 12:
                         faceValueName = "king";
                         break;
-                    default: throw new ArgumentException($"Something went wrong {card[1]} is not a valid faceValue!");
+                    default: throw new ArgumentException($"Something went wrong {card.FaceValue} is not a valid faceValue!");
                 }
 
                 var suitName = string.Empty;
-                switch (card[0])
+                switch (card.Suit)
                 {
                     case 0:
                         suitName = "clubs";
@@ -74,7 +64,7 @@ namespace McrDigital.Bootcamp1.Cards
                     case 3:
                         suitName = "spades";
                         break;
-                    default: throw new ArgumentException($"Something went wrong {card[0]} is not a valid suitName!");
+                    default: throw new ArgumentException($"Something went wrong {card.Suit} is not a valid suitName!");
                 }
 
                 result[cardNumber] = $"{faceValueName} of {suitName}";
