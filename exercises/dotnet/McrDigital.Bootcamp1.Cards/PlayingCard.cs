@@ -2,7 +2,7 @@
 
 namespace McrDigital.Bootcamp1.Cards
 {
-    public class PlayingCard : ICard
+    public class PlayingCard : Card
     {
         public PlayingCard(Suit suit, int faceValue)
         {
@@ -41,11 +41,6 @@ namespace McrDigital.Bootcamp1.Cards
                     return "king";
                 default: throw new ArgumentException($"Something went wrong {FaceValue} is not a valid faceValue!");
             }
-        }
-
-        public bool Snap(ICard card)
-        {
-            return this == card;
         }
     }
 }

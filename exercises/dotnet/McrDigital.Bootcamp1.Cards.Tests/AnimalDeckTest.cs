@@ -9,7 +9,7 @@ namespace McrDigital.Bootcamp1.Cards.Tests
         [Fact]
         public void ShouldGetDeckInOrderAndReturn52CardsCorrectlyFormatted()
         {
-            var deck = new PlayingCardDeck();
+            var deck = new AnimalDeck();
             Assert.Equal(
                 new string[]
                 {
@@ -72,7 +72,7 @@ namespace McrDigital.Bootcamp1.Cards.Tests
         [Fact]
         public void ShouldShuffleAndReturnCardsInAnyOrder()
         {
-            var deck = new PlayingCardDeck();
+            var deck = new AnimalDeck();
             deck.Shuffle();
             Assert.Equal(
                 new string[]

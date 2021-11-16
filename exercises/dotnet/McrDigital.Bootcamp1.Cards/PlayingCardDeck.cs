@@ -1,13 +1,10 @@
 namespace McrDigital.Bootcamp1.Cards
 {
-    using System.Linq;
-    using System.Collections.Generic;
 
-    public class PlayingCardDeck : IDeck
+    public class PlayingCardDeck : Deck
     {
         public PlayingCardDeck()
         {
-            playingCards = new List<PlayingCard>();
 
             var result = new string[52];
             var deck = new PlayingCard[52];
@@ -18,7 +15,7 @@ namespace McrDigital.Bootcamp1.Cards
                 {
                     var newCard = new PlayingCard(new Suit(suit), faceValue);
                     deck[suit * 13 + faceValue] = newCard;
-                    playingCards.Add(newCard);
+                    cards.Add(newCard);
                 }
             }
 
@@ -28,25 +25,6 @@ namespace McrDigital.Bootcamp1.Cards
                 result[cardNumber] = $"{card.GetFaceValueName()} of {card.Suit.GetSuitName()}";
                 cardNumber++;
             }
-        }
-
-        private readonly List<PlayingCard> playingCards;
-
-        public string[] GetCards()
-        {
-            return playingCards.Select(_ => _.ToString()).ToArray();
-        }
-
-        public ICard Deal()
-        {
-            var card = playingCards[0];
-            playingCards.RemoveAt(0);
-            return card;
-        }
-
-        public void Shuffle()
-        {
-            playingCards.KnuthShuffle(); ;
         }
     }
 }
