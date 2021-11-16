@@ -4,6 +4,7 @@
     {
         string[] GetCards();
 
-      //  ICard Deal();
+        ICard Deal();
+        void Shuffle();
     }
 }

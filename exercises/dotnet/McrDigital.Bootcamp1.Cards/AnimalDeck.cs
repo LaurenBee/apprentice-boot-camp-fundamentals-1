@@ -3,7 +3,7 @@ namespace McrDigital.Bootcamp1.Cards
     using System;
     using System.Collections.Generic;
 
-    public class AnimalDeck
+    public class AnimalDeck : IDeck
     {
         private readonly List<AnimalCard> _cards;
 
@@ -17,7 +17,7 @@ namespace McrDigital.Bootcamp1.Cards
             }
         }
 
-        public AnimalCard Deal()
+        public ICard Deal()
         {
             var card = _cards[0];
             _cards.RemoveAt(0);

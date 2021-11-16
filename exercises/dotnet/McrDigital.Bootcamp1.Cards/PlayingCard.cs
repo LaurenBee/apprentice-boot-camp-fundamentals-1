@@ -12,7 +12,7 @@ namespace McrDigital.Bootcamp1.Cards
         public Suit Suit { get; }
         public int FaceValue { get; }
 
-        public string GetDescription()
+        public override string ToString()
         {
             return $"{this.GetFaceValueName()} of {this.Suit.GetSuitName()}";
         }
@@ -45,7 +45,7 @@ namespace McrDigital.Bootcamp1.Cards
 
         public bool Snap(ICard card)
         {
-            return this.GetDescription() == card.GetDescription();
+            return this == card;
         }
     }
 }

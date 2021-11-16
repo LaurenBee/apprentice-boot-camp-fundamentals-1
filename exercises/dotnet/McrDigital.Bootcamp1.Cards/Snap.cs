@@ -22,7 +22,7 @@ namespace McrDigital.Bootcamp1.Cards
 
         public void Play()
         {
-            AnimalCard previousCard = null;
+            ICard previousCard = null;
             while (_deck.GetCards().Length > 0)
             {
                 var currentCard = _deck.Deal();
