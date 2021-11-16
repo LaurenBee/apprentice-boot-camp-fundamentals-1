@@ -46,7 +46,12 @@ namespace McrDigital.Bootcamp1.Cards
 
         public void Shuffle()
         {
-            playingCards.KnuthShuffle(); ;
+            playingCards.KnuthShuffle();
+        }
+
+        public ICard[] GetAllCards()
+        {
+            return playingCards.ToArray();
         }
     }
 }

@@ -24,6 +24,11 @@ namespace McrDigital.Bootcamp1.Cards
             return card;
         }
 
+        public ICard[] GetAllCards()
+        {
+            return _cards.ToArray();
+        }
+
         public string[] GetCards()
         {
             var result = new string[_cards.Count];

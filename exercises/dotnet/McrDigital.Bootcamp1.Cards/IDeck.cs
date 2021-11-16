@@ -3,7 +3,7 @@
     public interface IDeck
     {
         string[] GetCards();
-
+        ICard[] GetAllCards();
         ICard Deal();
         void Shuffle();
     }
