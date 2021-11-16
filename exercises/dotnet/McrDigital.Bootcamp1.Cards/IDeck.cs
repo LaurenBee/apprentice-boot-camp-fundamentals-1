@@ -1,6 +1,6 @@
 ﻿namespace McrDigital.Bootcamp1.Cards
 {
-    interface IDeck
+    public interface IDeck
     {
         string[] GetCards();
 
