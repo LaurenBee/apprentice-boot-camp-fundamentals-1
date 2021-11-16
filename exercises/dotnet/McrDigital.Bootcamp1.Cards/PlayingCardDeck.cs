@@ -2,7 +2,7 @@ namespace McrDigital.Bootcamp1.Cards
 {
     using System;
 
-    public class PlayingCardDeck
+    public class PlayingCardDeck : IDeck
     {
         public PlayingCardDeck()
         {
