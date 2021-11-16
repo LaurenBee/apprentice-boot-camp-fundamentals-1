@@ -7,9 +7,9 @@ namespace McrDigital.Bootcamp1.Cards.Tests
         [Fact]
         public void CanCreatePlayingCard ()
         {
-            var playingCard = new PlayingCard(0, 2);
+            var playingCard = new PlayingCard(new Suit(0), 2);
 
-            Assert.Equal(0, playingCard.Suit);
+            Assert.Equal(0, playingCard.Suit.Value);
             Assert.Equal(2, playingCard.FaceValue);
         }
     }

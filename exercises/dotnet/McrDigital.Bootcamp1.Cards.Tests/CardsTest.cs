@@ -8,7 +8,7 @@ namespace McrDigital.Bootcamp1.Cards.Tests
         [Fact]
         public void ShouldGetDeckInOrderAndReturn52CardsCorrectlyFormatted()
         {
-            var encapsulation = new Cards();
+            var encapsulation = new PlayingCardDeck();
             Assert.Equal(
                 new string[]
                 {
